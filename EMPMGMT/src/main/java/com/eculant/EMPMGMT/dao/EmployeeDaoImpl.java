@@ -26,7 +26,6 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	}
 	
 	@Override
-	@Transactional
 	public List<Employee> showAll() {
 		
 		//get current hibernate session
@@ -42,5 +41,20 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		//return the results
 		return theEmployees;
 	}
+
+	@Override
+	public Employee findEmpById(int theId) {
+		
+		//get current hibernate session
+		Session currentSession = entityManager.unwrap(Session.class);
+		
+		//get employee
+		Employee theEmployee = 
+				currentSession.get(Employee.class, theId);
+		
+		//return the employee
+		return theEmployee;
+	}
+
 
 }

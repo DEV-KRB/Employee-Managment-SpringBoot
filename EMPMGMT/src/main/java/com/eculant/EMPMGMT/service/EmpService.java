@@ -1,13 +1,12 @@
-package com.eculant.EMPMGMT.dao;
+package com.eculant.EMPMGMT.service;
 
 import java.util.List;
 
 import com.eculant.EMPMGMT.entity.Employee;
 
-public interface EmployeeDao {
+public interface EmpService {
 
 	public List<Employee> showAll();
 	
-	public Employee findEmpById(int theId);
-	
+	public Employee findById(int theId);
 }
