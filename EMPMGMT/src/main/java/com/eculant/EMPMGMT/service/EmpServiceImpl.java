@@ -28,9 +28,8 @@ public class EmpServiceImpl implements EmpService {
 
 	@Override
 	public Employee findById(int theId) {
-		// TODO Auto-generated method stub
-		Optional<Employee> result = employeeRepository.findById(theId);
 		
+		Optional<Employee> result = employeeRepository.findById(theId);
 		Employee theEmployee = null;
 		if(result.isPresent()) {
 			return result.get();
